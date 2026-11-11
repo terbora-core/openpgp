@@ -1,8 +1,8 @@
 {
-    "name": "php-privacy/openpgp",
+    "name": "terbora/openpgp",
     "type": "library",
-    "description": "PHP Privacy - The OpenPGP library in PHP language",
-    "keywords": ["library", "openpgp", "end to end encryption", "privacy guard"],
+    "description": "Terbora OpenPGP - A modern, PHP-native implementation of the OpenPGP standard (RFC 9580)",
+    "keywords": ["openpgp", "rfc9580", "pgp", "encryption", "digital-signatures"],
     "license": "BSD-3-Clause",
     "authors": [
         {
@@ -12,27 +12,13 @@
         }
     ],
     "require": {
-        "php": ">=8.1",
+        "php": ">=8.3",
         "phpseclib/phpseclib": "^3.0",
         "symfony/process": "^6.1 | ^7.0 | ^8.0"
-    },
-    "require-dev": {
-        "fakerphp/faker": "^1.0",
-        "phpunit/phpunit": "^9.0 | ^10.0"
     },
     "autoload": {
         "psr-4": {
             "OpenPGP\\": "src/"
         }
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "OpenPGP\\Tests\\": "tests/"
-        }
-    },
-    "scripts": {
-        "test": [
-            "vendor/bin/phpunit -c tests/phpunit.xml"
-        ]
     }
 }

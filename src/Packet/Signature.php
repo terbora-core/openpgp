@@ -218,7 +218,9 @@ class Signature extends AbstractPacket implements SignaturePacketInterface
         $hashedSubpackets = [
             Signature\SignatureCreationTime::fromTime($time ?? new \DateTime()),
             Signature\IssuerFingerprint::fromKeyPacket($signKey),
-            Signature\IssuerKeyID::fromKeyID($signKey->getKeyID()),
+            ...($version === KeyVersion::V4->value
+                ? [Signature\IssuerKeyID::fromKeyID($signKey->getKeyID())]
+                : []),
             ...$subpackets,
         ];
 
