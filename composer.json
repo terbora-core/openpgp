@@ -9,8 +9,22 @@
             "name": "Nguyen Van Nguyen",
             "email": "nguyennv1981@gmail.com",
             "homepage": "https://github.com/nguyennv"
+        },
+        {
+            "name": "Iliya Bazlyankov",
+            "email": "hello@terbora.com",
+            "homepage": "https://terbora.com",
+            "role": "Maintainer"
         }
     ],
+    "homepage": "https://terbora.com",
+    "support": {
+        "issues": "https://github.com/terbora-core/openpgp/issues",
+        "source": "https://github.com/terbora-core/openpgp"
+    },
+    "replace": {
+        "php-privacy/openpgp": "*"
+    },
     "require": {
         "php": ">=8.3",
         "ext-sodium": "*",
