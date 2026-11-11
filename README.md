@@ -9,7 +9,6 @@ digital signatures, compression, and key management.
 * PHP 8.1.x or later,
 * [phpseclib](https://github.com/phpseclib/phpseclib) library provides cryptography algorithms,
 * [Argon2](https://github.com/P-H-C/phc-winner-argon2) for Argon2 string-to-key,
-* (optional) PHPUnit to run tests,
 
 ## Features
 * Support data signing & encryption.
@@ -47,26 +46,6 @@ or just add it to your `composer.json` file directly.
         "php-privacy/openpgp": "^2.1"
     }
 }
-```
-
-## Basic usage of PHP Privacy
-Sign and verify cleartext message
-```php
-<?php declare(strict_types=1);
-
-require_once 'vendor/autoload.php';
-
-use OpenPGP\OpenPGP;
-
-$armoredPublicKey = '-----BEGIN PGP PUBLIC KEY BLOCK-----';
-$armoredPrivateKey = '-----BEGIN PGP PRIVATE KEY BLOCK-----';
-$passphrase = 'Your passphrase';
-
-$publicKey = OpenPGP::readPublicKey($armoredPublicKey);
-$privateKey = OpenPGP::decryptPrivateKey($armoredPrivateKey, $passphrase);
-$cleartextMessage = OpenPGP::createCleartextMessage('Hello, PHP Privacy!');
-$signedMessage = $cleartextMessage->sign([$privateKey]);
-$verifications = $signedMessage->verify([$publicKey]);
 ```
 
 ## Licensing
